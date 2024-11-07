@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .credit-card {
+            width: 90%;
+            max-width: 320px;
+            aspect-ratio: 16 / 10;
+            /* Untuk menjaga rasio kartu */
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .card-header {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .bank-name {
+            margin-bottom: 20px;
+        }
+
+        .card-chip {
+            width: 15%;
+            aspect-ratio: 5 / 3;
+            background-color: #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .card-number {
+            font-size: 1em;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .card-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-details label {
+            font-size: 0.7em;
+            color: #e0e0e0;
+        }
+
+        .card-holder,
+        .card-expiry {
+            font-size: 0.8em;
+        }
+
+        .card-logo {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 15%;
+        }
+
+        .card-logo img {
+            width: 100%;
+        }
+
+        /* Responsif untuk perangkat yang lebih kecil */
+        @media (max-width: 600px) {
+            .credit-card {
+                padding: 15px;
+                max-width: 280px;
+            }
+
+            .card-header {
+                font-size: 1em;
+            }
+
+            .card-number {
+                font-size: 0.9em;
+            }
+
+            .card-holder,
+            .card-expiry {
+                font-size: 0.7em;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="credit-card">
+        <div class="card-header">
+            <h1 class="bank-name">Bank Name</h1>
+        </div>
+        <div class="card-chip">
+            <div class="chip"></div>
+        </div>
+        <div class="card-number">
+            <span>1234 5678 9012 3456</span>
+        </div>
+        <div class="card-details">
+            <div class="card-holder">
+                <label>Card Holder</label>
+                <span>John Doe</span>
+            </div>
+            <div class="card-expiry">
+                <label>Expires</label>
+                <span>12/25</span>
+            </div>
+        </div>
+        <div class="card-logo">
+            <svg width="72" height="24" viewBox="0 0 72 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M52.3973 1.01093L51.5588 5.99054C49.0448 4.56717 43.3231 4.23041 43.3231 6.85138C43.3231 7.89285 44.6177 8.60913 46.178 9.47241C48.5444 10.7817 51.5221 12.4291 51.5221 16.062C51.5221 21.8665 45.4731 24 41.4645 24C37.4558 24 34.8325 22.6901 34.8325 22.6901L35.7065 17.4848C38.1115 19.4688 45.4001 20.032 45.4001 16.8863C45.4001 15.5645 43.9656 14.785 42.3019 13.8811C40.0061 12.6336 37.2742 11.1491 37.2742 7.67563C37.2742 1.30988 44.1978 0 47.1132 0C49.8102 0 52.3973 1.01093 52.3973 1.01093ZM66.6055 23.6006H72L67.2966 0.414276H62.5732C60.3923 0.414276 59.8612 2.14215 59.8612 2.14215L51.0996 23.6006H57.2234L58.4481 20.1566H65.9167L66.6055 23.6006ZM60.1406 15.399L63.2275 6.72235L64.9642 15.399H60.1406ZM14.7942 16.3622L20.3951 0.414917H26.7181L17.371 23.6012H11.2498L6.14551 3.45825C2.83215 1.41281 0 0.807495 0 0.807495L0.108643 0.414917H9.36816C11.9161 0.414917 12.1552 2.50314 12.1552 2.50314L14.1313 12.9281L14.132 12.9294L14.7942 16.3622ZM25.3376 23.6006H31.2126L34.8851 0.414917H29.0095L25.3376 23.6006Z"
+                    fill="white" />
+            </svg>
+        </div>
+    </div>
+</body>
+
+</html>
