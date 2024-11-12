@@ -9,15 +9,15 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'type'];
+    protected $fillable = ['type_id', 'name'];
 
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
     }
 
-    public function budgets()
+    public function type()
     {
-        return $this->hasMany(Budget::class);
+        return $this->belongsTo(Type::class);
     }
 }

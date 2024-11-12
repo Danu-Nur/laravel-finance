@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('banks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->enum('type', ['income', 'expense']);
+            $table->string('name')->nullable(); // Nama bank atau e-wallet
+            $table->text('image')->nullable(); // Nama bank atau e-wallet
+            $table->string('type')->nullable(); // Tipe, contoh: 'bank' atau 'e-wallet'
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('banks');
     }
 };

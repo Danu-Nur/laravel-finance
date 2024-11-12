@@ -42,6 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function accounts()
+    {
+        return $this->hasMany(Account::class);
+    }
 
     public function transactions()
     {
@@ -53,9 +57,8 @@ class User extends Authenticatable
         return $this->hasMany(Budget::class);
     }
 
-    public function assets()
-    {
-        return $this->hasMany(Asset::class);
-    }
-
+    // public function savings()
+    // {
+    //     return $this->hasMany(Saving::class);
+    // }
 }

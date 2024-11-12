@@ -10,7 +10,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // Fetch all assets and calculate their total value
         $assets = Asset::all();
         $sumAsset = $assets->sum('value');
 
@@ -19,14 +18,19 @@ class DashboardController extends Controller
 
         // Calculate income transactions and their total amount
         $dataTransactionIncome = Transaction::whereHas('category', function ($query) {
-            $query->where('type', 'income');
+            $query->whereHas('type', function ($query) {
+                $query->where('name', 'income');
+            });
         });
+
         $sumTransactionIncome = $dataTransactionIncome->sum('amount');
         $getTransactionIncome = $dataTransactionIncome->get();
 
         // Calculate expense transactions and their total amount
         $dataTransactionExpense = Transaction::whereHas('category', function ($query) {
-            $query->where('type', 'expense');
+            $query->whereHas('type', function ($query) {
+                $query->where('name', 'expense');
+            });
         });
         $sumTransactionExpense = $dataTransactionExpense->sum('amount');
         $getTransactionExpense = $dataTransactionExpense->get();
@@ -39,7 +43,9 @@ class DashboardController extends Controller
 
         // Fetch income transactions, grouped by month
         $incomeTransactions = Transaction::whereHas('category', function ($query) {
-            $query->where('type', 'income');
+            $query->whereHas('type', function ($query) {
+                $query->where('name', 'income');
+            });
         })
             ->selectRaw('YEAR(date) as year, MONTH(date) as month, SUM(amount) as total')
             ->groupBy('year', 'month')
@@ -50,7 +56,9 @@ class DashboardController extends Controller
 
         // Fetch expense transactions, grouped by month
         $expenseTransactions = Transaction::whereHas('category', function ($query) {
-            $query->where('type', 'expense');
+            $query->whereHas('type', function ($query){
+                $query->where('name', 'expense');
+            });
         })
             ->selectRaw('YEAR(date) as year, MONTH(date) as month, SUM(amount) as total')
             ->groupBy('year', 'month')

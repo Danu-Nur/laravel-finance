@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('budgets', function (Blueprint $table) {
+        Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->decimal('amount', 10, 2);
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('bank_id')->nullable(); // ID bank/e-wallet terkait (nullable)
+            $table->string('account_name')->nullable(); // Nama akun
+            $table->string('status')->nullable(); // Status akun
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('budgets');
+        Schema::dropIfExists('accounts');
     }
 };

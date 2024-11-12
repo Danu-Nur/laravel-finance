@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('assets', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->decimal('amount', 10, 2);
-            $table->date('date');
-            $table->text('description')->nullable();
+            $table->unsignedBigInteger('user_id'); // ID pengguna yang memiliki aset
+            $table->string('name')->nullable(); // Nama aset
+            $table->decimal('value', 30, 2)->nullable(); // Nilai aset
+            $table->date('purchase_date')->nullable(); // Tanggal pembelian (opsional)
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('assets');
     }
 };

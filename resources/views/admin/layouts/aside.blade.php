@@ -36,6 +36,42 @@
             </div>
             <!--end::Menu item-->
             <!--begin::Menu item-->
+            <div class="menu-item bg-light-secondary">
+                <a href="apps/devs/tag.html" class="menu-link">
+                    <span class="menu-title text-grey">Bank</span>
+                    <div class="symbol symbol-40px ms-5">
+                        <span class="symbol-label bg-light-secondary">
+                            <i class="ki-duotone ki-two-credit-cart fs-2 text-dark">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                                <span class="path4"></span>
+                                <span class="path5"></span>
+                            </i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <!--end::Menu item-->
+            <!--begin::Menu item-->
+            <div class="menu-item bg-light-secondary">
+                <a href="apps/devs/tag.html" class="menu-link">
+                    <span class="menu-title text-grey">Type</span>
+                    <div class="symbol symbol-40px ms-5">
+                        <span class="symbol-label bg-light-secondary">
+                            <i class="ki-duotone ki-two-credit-cart fs-2 text-dark">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                                <span class="path4"></span>
+                                <span class="path5"></span>
+                            </i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <!--end::Menu item-->
+            <!--begin::Menu item-->
             <div class="menu-item bg-light-primary">
                 <a href="apps/devs/tag.html" class="menu-link">
                     <span class="menu-title">Category</span>
