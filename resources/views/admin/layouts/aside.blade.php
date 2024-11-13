@@ -20,7 +20,7 @@
             <!--end::Heading-->
             <!--begin::Menu item-->
             <div class="menu-item bg-light-success">
-                <a href="{{ asset('metronic_html/demo5') }}/apps/devs/search.html" class="menu-link">
+                <a href="{{ route('dashboard.index') }}" class="menu-link">
                     <span class="menu-title">Dashboard</span>
                     <div class="symbol symbol-40px ms-5">
                         <span class="symbol-label bg-light-success">
@@ -37,7 +37,7 @@
             <!--end::Menu item-->
             <!--begin::Menu item-->
             <div class="menu-item bg-light-secondary">
-                <a href="apps/devs/tag.html" class="menu-link">
+                <a href="{{ route('bank.index') }}" class="menu-link">
                     <span class="menu-title text-grey">Bank</span>
                     <div class="symbol symbol-40px ms-5">
                         <span class="symbol-label bg-light-secondary">

@@ -7,6 +7,8 @@
 <!--end::Global Javascript Bundle-->
 <!--begin::Vendors Javascript(used for this page only)-->
 <script src="{{ asset('metronic_html/demo5') }}/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+<!--begin::Custom Javascript(used for this page only)-->
+<script src="{{ asset('metronic_html/demo5') }}/assets/js/custom/apps/projects/project/project.js"></script>
 <script src="{{ asset('metronic_html/demo5') }}/assets/plugins/custom/vis-timeline/vis-timeline.bundle.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
