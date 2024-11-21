@@ -19,11 +19,11 @@
             </div>
             <!--end::Heading-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-success">
-                <a href="{{ route('dashboard.index') }}" class="menu-link">
+            <div class="menu-item bg-light-secondary">
+                <a href="{{ route('dashboard.index') }}" class="menu-link {!! $pageTitle == 'Dashboard' ? 'active' : '' !!}">
                     <span class="menu-title">Dashboard</span>
                     <div class="symbol symbol-40px ms-5">
-                        <span class="symbol-label bg-light-success">
+                        <span class="symbol-label bg-light-primary">
                             <i class="ki-duotone ki-chart-simple-3 fs-2 text-success">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
@@ -37,10 +37,10 @@
             <!--end::Menu item-->
             <!--begin::Menu item-->
             <div class="menu-item bg-light-secondary">
-                <a href="{{ route('bank.index') }}" class="menu-link">
+                <a href="{{ route('bank.index') }}" class="menu-link {!! $pageTitle == 'Banks' ? 'active' : '' !!}">
                     <span class="menu-title text-grey">Bank</span>
                     <div class="symbol symbol-40px ms-5">
-                        <span class="symbol-label bg-light-secondary">
+                        <span class="symbol-label bg-light-primary">
                             <i class="ki-duotone ki-two-credit-cart fs-2 text-dark">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
@@ -55,10 +55,10 @@
             <!--end::Menu item-->
             <!--begin::Menu item-->
             <div class="menu-item bg-light-secondary">
-                <a href="apps/devs/tag.html" class="menu-link">
+                <a href="{{ route('type.index') }}" class="menu-link {!! $pageTitle == 'Types' ? 'active' : '' !!}">
                     <span class="menu-title text-grey">Type</span>
                     <div class="symbol symbol-40px ms-5">
-                        <span class="symbol-label bg-light-secondary">
+                        <span class="symbol-label bg-light-primary">
                             <i class="ki-duotone ki-two-credit-cart fs-2 text-dark">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
@@ -72,8 +72,8 @@
             </div>
             <!--end::Menu item-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-primary">
-                <a href="apps/devs/tag.html" class="menu-link">
+            <div class="menu-item bg-light-secondary">
+                <a href="apps/devs/tag.html" class="menu-link {!! $pageTitle == 'Category' ? 'active' : '' !!}">
                     <span class="menu-title">Category</span>
                     <div class="symbol symbol-40px ms-5">
                         <span class="symbol-label bg-light-primary">
@@ -88,10 +88,10 @@
             <!--end::Menu item-->
             <!--begin::Menu item-->
             <div class="menu-item bg-light-secondary">
-                <a href="apps/devs/tag.html" class="menu-link">
+                <a href="{{ route('account.index') }}" class="menu-link {!! $pageTitle == 'Accounts' ? 'active' : '' !!}">
                     <span class="menu-title text-grey">Accounts</span>
                     <div class="symbol symbol-40px ms-5">
-                        <span class="symbol-label bg-light-secondary">
+                        <span class="symbol-label bg-light-primary">
                             <i class="ki-duotone ki-two-credit-cart fs-2 text-dark">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
@@ -105,11 +105,11 @@
             </div>
             <!--end::Menu item-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-danger">
-                <a href="apps/devs/ask.html" class="menu-link">
+            <div class="menu-item bg-light-secondary">
+                <a href="apps/devs/ask.html" class="menu-link {!! $pageTitle == 'Transaction' ? 'active' : '' !!}">
                     <span class="menu-title">Transaction</span>
                     <div class="symbol symbol-40px ms-5">
-                        <span class="symbol-label bg-light-danger">
+                        <span class="symbol-label bg-light-primary">
                             <i class="ki-duotone ki-cheque fs-2 text-danger">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
@@ -125,11 +125,11 @@
             </div>
             <!--end::Collapse-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-warning">
-                <a href="apps/devs/ask.html" class="menu-link">
+            <div class="menu-item bg-light-secondary">
+                <a href="apps/devs/ask.html" class="menu-link {!! $pageTitle == 'Budget' ? 'active' : '' !!}">
                     <span class="menu-title">Budget</span>
                     <div class="symbol symbol-40px ms-5">
-                        <span class="symbol-label bg-light-warning">
+                        <span class="symbol-label bg-light-primary">
                             <i class="ki-duotone ki-finance-calculator fs-2 text-warning">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
@@ -145,11 +145,11 @@
             </div>
             <!--end::Collapse-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-info">
-                <a href="apps/devs/ask.html" class="menu-link">
+            <div class="menu-item bg-light-secondary">
+                <a href="apps/devs/ask.html" class="menu-link {!! $pageTitle == 'Asset' ? 'active' : '' !!}">
                     <span class="menu-title">Asset</span>
                     <div class="symbol symbol-40px ms-5">
-                        <span class="symbol-label bg-light-info">
+                        <span class="symbol-label bg-light-primary">
                             <i class="ki-duotone ki-bank fs-2 text-info">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
@@ -161,10 +161,10 @@
             <!--end::Collapse-->
             <!--begin::Menu item-->
             <div class="menu-item bg-light-secondary">
-                <a href="apps/devs/ask.html" class="menu-link">
+                <a href="apps/devs/ask.html" class="menu-link {!! $pageTitle == 'User' ? 'active' : '' !!}">
                     <span class="menu-title">User</span>
                     <div class="symbol symbol-40px ms-5">
-                        <span class="symbol-label bg-light-secondary">
+                        <span class="symbol-label bg-light-primary">
                             <i class="ki-duotone ki-badge fs-2 text-dark">
                                 <span class="path1"></span>
                                 <span class="path2"></span>

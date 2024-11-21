@@ -13,7 +13,7 @@
             <!--end::Aside mobile toggle-->
             <!--begin::Logo-->
             <a href="index.html">
-                <i class="ki-duotone ki-dollar d-lg-inline fs-5x">
+                <i class="ki-duotone ki-dollar d-lg-inline fs-5x text-success">
                     <span class="path1"></span>
                     <span class="path2"></span>
                     <span class="path3"></span>
@@ -41,7 +41,7 @@
                             class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
                             <!--begin:Menu link-->
                             <span class="menu-link py-3">
-                                <span class="menu-title">Dashboards</span>
+                                <span class="menu-title">{{ $pageTitle }}</span>
                                 <span class="menu-arrow d-lg-none"></span>
                             </span>
                             <!--end:Menu link-->

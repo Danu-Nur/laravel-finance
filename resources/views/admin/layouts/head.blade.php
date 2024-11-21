@@ -9,7 +9,7 @@
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
 <meta property="og:title"
-    content="Metronic - The World's #1 Selling Bootstrap Admin Template - Metronic by KeenThemes" />
+    content={{ $pageTitle }} />
 <meta property="og:url" content="https://keenthemes.com/metronic" />
 <meta property="og:site_name" content="Metronic by Keenthemes" />
 <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />

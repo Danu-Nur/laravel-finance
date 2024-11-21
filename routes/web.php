@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 // Route::get('/bank/index',[BankController::class,'index'])->name('bank.index');
 Route::resource('bank', BankController::class);
+Route::resource('account',AccountController::class);
+Route::resource('type',TypeController::class);

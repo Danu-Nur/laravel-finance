@@ -58,7 +58,7 @@ var KTAppEcommerceSalesListing = function () {
                 pageLength: 10,
                 columnDefs: [{
                     orderable: 1,
-                    targets: 3
+                    targets: 2
                 },]
             })).on("draw", (function () {
                 c()

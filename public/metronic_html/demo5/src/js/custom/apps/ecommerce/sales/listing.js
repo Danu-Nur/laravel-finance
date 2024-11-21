@@ -57,7 +57,7 @@ var KTAppEcommerceSalesListing = function () {
             if (value === 'all') {
                 value = '';
             }
-            datatable.column(3).search(value).draw();
+            // datatable.column(3).search(value).draw();
         });
     }
 
