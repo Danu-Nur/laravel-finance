@@ -25,7 +25,7 @@
                         <span class="path2"></span>
                     </i>
                     <input type="text" data-kt-ecommerce-order-filter="search"
-                        class="form-control form-control-solid w-250px ps-12" placeholder="Search Data Type" />
+                        class="form-control form-control-solid w-250px ps-12" placeholder="Search Data Bank" />
                 </div>
                 <!--end::Search-->
             </div>
@@ -33,7 +33,7 @@
             <!--begin::Card toolbar-->
             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                 <!--begin::Add product-->
-                <a href="{{ route('type.create') }}" class="btn btn-primary">Add {{ $pageTitle }}</a>
+                <a href="{{ route('category.create') }}" class="btn btn-primary">Add {{ $pageTitle }}</a>
                 <!--end::Add product-->
             </div>
             <!--end::Card toolbar-->
@@ -47,14 +47,18 @@
                     <tr class="text-center text-gray-800 fw-bold fs-7 text-uppercase gs-0">
                         <th class="text-center min-w-100px">ID</th>
                         <th class="text-center min-w-100px">Type</th>
+                        <th class="text-center min-w-100px">Category</th>
                         <th class="text-center min-w-100px">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="fw-semibold text-gray-600">
-                    @foreach ($type as $data)
+                    @foreach ($category as $data)
                         <tr>
                             <td class="text-center pe-0">
                                 <span class="fw-bold">{{ $data->id }}</span>
+                            </td>
+                            <td class="text-center">
+                                <span class="fw-bold">{{ $data->type->name }}</span>
                             </td>
                             <td class="text-center">
                                 <span class="fw-bold">{{ $data->name }}</span>
@@ -68,12 +72,12 @@
                                     data-kt-menu="true">
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-3">
-                                        <a href="{{ route('type.show', $data->id) }}" class="menu-link px-3">View</a>
+                                        <a href="{{ route('category.show', $data->id) }}" class="menu-link px-3">View</a>
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-3">
-                                        <a href="{{ route('type.edit', $data->id) }}" class="menu-link px-3">Edit</a>
+                                        <a href="{{ route('category.edit', $data->id) }}" class="menu-link px-3">Edit</a>
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
@@ -81,7 +85,7 @@
                                     <div class="menu-item px-3">
                                         <a href="javascript:void(0);" class="menu-link px-3"
                                             data-kt-ecommerce-order-filter="delete_row"
-                                            onclick="event.preventDefault(); deleteAccount('{{ route('type.destroy', $data->id) }}');">
+                                            onclick="event.preventDefault(); deleteAccount('{{ route('category.destroy', $data->id) }}');">
                                             Delete
                                         </a>
                                     </div>
@@ -95,6 +99,7 @@
                             </td>
                         </tr>
                     @endforeach
+
                 </tbody>
             </table>
             <!--end::Table-->

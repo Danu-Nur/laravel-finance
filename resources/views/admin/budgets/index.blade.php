@@ -35,6 +35,8 @@
             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                 <!--begin::Add product-->
                 <a href="{{ route('bank.create') }}" class="btn btn-primary">Add {{ $pageTitle }}</a>
+                {{-- <a href="" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target" class="btn btn-primary">Add
+                    Bank</a> --}}
                 <!--end::Add product-->
             </div>
             <!--end::Card toolbar-->

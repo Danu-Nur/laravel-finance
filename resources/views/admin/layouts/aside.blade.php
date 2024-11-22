@@ -19,7 +19,7 @@
             </div>
             <!--end::Heading-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-secondary">
+            <div class="menu-item">
                 <a href="{{ route('dashboard.index') }}" class="menu-link {!! $pageTitle == 'Dashboard' ? 'active' : '' !!}">
                     <span class="menu-title">Dashboard</span>
                     <div class="symbol symbol-40px ms-5">
@@ -36,7 +36,7 @@
             </div>
             <!--end::Menu item-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-secondary">
+            <div class="menu-item">
                 <a href="{{ route('bank.index') }}" class="menu-link {!! $pageTitle == 'Banks' ? 'active' : '' !!}">
                     <span class="menu-title text-grey">Bank</span>
                     <div class="symbol symbol-40px ms-5">
@@ -54,7 +54,7 @@
             </div>
             <!--end::Menu item-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-secondary">
+            <div class="menu-item">
                 <a href="{{ route('type.index') }}" class="menu-link {!! $pageTitle == 'Types' ? 'active' : '' !!}">
                     <span class="menu-title text-grey">Type</span>
                     <div class="symbol symbol-40px ms-5">
@@ -72,8 +72,8 @@
             </div>
             <!--end::Menu item-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-secondary">
-                <a href="apps/devs/tag.html" class="menu-link {!! $pageTitle == 'Category' ? 'active' : '' !!}">
+            <div class="menu-item">
+                <a href="{{ route('category.index') }}" class="menu-link {!! $pageTitle == 'Category' ? 'active' : '' !!}">
                     <span class="menu-title">Category</span>
                     <div class="symbol symbol-40px ms-5">
                         <span class="symbol-label bg-light-primary">
@@ -87,7 +87,7 @@
             </div>
             <!--end::Menu item-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-secondary">
+            <div class="menu-item">
                 <a href="{{ route('account.index') }}" class="menu-link {!! $pageTitle == 'Accounts' ? 'active' : '' !!}">
                     <span class="menu-title text-grey">Accounts</span>
                     <div class="symbol symbol-40px ms-5">
@@ -105,8 +105,8 @@
             </div>
             <!--end::Menu item-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-secondary">
-                <a href="apps/devs/ask.html" class="menu-link {!! $pageTitle == 'Transaction' ? 'active' : '' !!}">
+            <div class="menu-item">
+                <a href="{{ route('transaction.index') }}" class="menu-link {!! $pageTitle == 'Transaction' ? 'active' : '' !!}">
                     <span class="menu-title">Transaction</span>
                     <div class="symbol symbol-40px ms-5">
                         <span class="symbol-label bg-light-primary">
@@ -125,8 +125,8 @@
             </div>
             <!--end::Collapse-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-secondary">
-                <a href="apps/devs/ask.html" class="menu-link {!! $pageTitle == 'Budget' ? 'active' : '' !!}">
+            <div class="menu-item">
+                <a href="{{ route('budget.index') }}" class="menu-link {!! $pageTitle == 'Budget' ? 'active' : '' !!}">
                     <span class="menu-title">Budget</span>
                     <div class="symbol symbol-40px ms-5">
                         <span class="symbol-label bg-light-primary">
@@ -145,8 +145,8 @@
             </div>
             <!--end::Collapse-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-secondary">
-                <a href="apps/devs/ask.html" class="menu-link {!! $pageTitle == 'Asset' ? 'active' : '' !!}">
+            <div class="menu-item">
+                <a href="{{ route('asset.index') }}" class="menu-link {!! $pageTitle == 'Asset' ? 'active' : '' !!}">
                     <span class="menu-title">Asset</span>
                     <div class="symbol symbol-40px ms-5">
                         <span class="symbol-label bg-light-primary">
@@ -160,8 +160,8 @@
             </div>
             <!--end::Collapse-->
             <!--begin::Menu item-->
-            <div class="menu-item bg-light-secondary">
-                <a href="apps/devs/ask.html" class="menu-link {!! $pageTitle == 'User' ? 'active' : '' !!}">
+            <div class="menu-item">
+                <a href="{{ route('user.index') }}" class="menu-link {!! $pageTitle == 'User' ? 'active' : '' !!}">
                     <span class="menu-title">User</span>
                     <div class="symbol symbol-40px ms-5">
                         <span class="symbol-label bg-light-primary">

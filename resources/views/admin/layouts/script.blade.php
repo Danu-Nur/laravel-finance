@@ -26,4 +26,14 @@
 <script src="{{ asset('metronic_html/demo5') }}/assets/js/custom/utilities/modals/create-account.js"></script>
 <script src="{{ asset('metronic_html/demo5') }}/assets/js/custom/utilities/modals/users-search.js"></script>
 <script src="{{ asset('metronic_html/demo5') }}/assets/js/custom/apps/ecommerce/sales/listing.js"></script>
+<script>
+    function deleteAccount(url) {
+    if (confirm('Are you sure you want to delete this account?')) {
+        const form = document.getElementById('delete-account-form');
+        form.action = url;
+        form.submit();
+    }
+}
+
+</script>
 

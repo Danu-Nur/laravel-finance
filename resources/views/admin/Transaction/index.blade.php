@@ -273,7 +273,7 @@
             </div>
             <!--begin::Row-->
             <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-5">
-                @foreach ($account as $accounts)
+                @foreach ($account as $data)
                     <div class="col">
                         <div class="credit-card">
                             <div class="credit-card-inner">
@@ -281,19 +281,19 @@
                                     <div class="credit-card-bg"></div>
                                     <div class="credit-card-glow"></div>
 
-                                    <img width="92" src="{{ asset($pathImg . $accounts->bank->image) }}" alt=""
+                                    <img width="92" src="{{ asset($pathImg . $data->bank->image) }}" alt=""
                                         class="logo">
 
                                     <div class="credit-card-chip">
                                         <img src="{{ asset('image/icon/chip.png') }}" alt="">
                                     </div>
-                                    <div class="credit-card-holder">{{ $accounts->account_name }}</div>
+                                    <div class="credit-card-holder">{{ $data->account_name }}</div>
                                     <div class="credit-card-number">Rp. 1.000.000.000</div>
                                     <div class="credit-card-valid">
-                                        ({{ $accounts->bank->name }})
+                                        ({{ $data->bank->name }})
                                     </div>
                                     <div class="credit-card-type">
-                                        ({{ $accounts->bank->type }})
+                                        ({{ $data->bank->type }})
                                     </div>
                                 </div>
                             </div>

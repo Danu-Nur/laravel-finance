@@ -48,8 +48,8 @@
                     <tr class="text-center text-gray-800 fw-bold fs-7 text-uppercase gs-0">
                         <th class="text-center min-w-100px">ID</th>
                         <th class="text-center min-w-100px">Name</th>
-                        <th class="text-center min-w-100px">Image</th>
-                        <th class="text-center min-w-100px">Type</th>
+                        <th class="text-center min-w-100px">Email</th>
+                        <th class="text-center min-w-100px">Password</th>
                         <th class="text-center min-w-100px">Actions</th>
                     </tr>
                 </thead>

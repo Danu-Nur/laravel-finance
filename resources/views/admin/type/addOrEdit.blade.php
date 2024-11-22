@@ -9,7 +9,7 @@
                     <span class="path1"></span>
                     <span class="path2"></span>
                 </i>
-                <h2>Add New Accounts</h2>
+                <h2>Add New {{ $pageTitle }}</h2>
             </div>
             <!--end::Card title-->
         </div>

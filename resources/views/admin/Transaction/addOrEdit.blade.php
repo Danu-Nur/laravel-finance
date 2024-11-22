@@ -9,7 +9,7 @@
                     <span class="path1"></span>
                     <span class="path2"></span>
                 </i>
-                <h2>Add New Accounts</h2>
+                <h2>Add New {{ $pageTitle }}</h2>
             </div>
             <!--end::Card title-->
         </div>
@@ -43,7 +43,7 @@
                 <!--end::Label-->
                 <!--begin::Select2-->
                 <select class="form-control form-control-solid form-select mb-2" data-control="select2"
-                    data-placeholder="Select an option" data-allow-clear="true"  name="bank_id">
+                    data-placeholder="Select an option" data-allow-clear="true" name="bank_id">
                     <option></option>
                     @foreach ($bank as $items)
                         <option value="{{ $items->id }}" {{ isset($account) ? ($account->bank_id == $items->id ? 'selected' : '' ) : '' }}>{{ $items->name }}</option>
