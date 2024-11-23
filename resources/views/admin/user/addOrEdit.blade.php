@@ -27,22 +27,6 @@
             @endif
             @csrf
             <!--begin::Input group-->
-            <div class="mb-7">
-                <!--begin::Label-->
-                <label class="fs-6 fw-semibold mb-3">
-                    <span>Image</span>
-                    <span class="ms-1" data-bs-toggle="tooltip" title="Allowed file types: png, jpg, jpeg.">
-                        <i class="ki-duotone ki-information fs-7">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                            <span class="path3"></span>
-                        </i>
-                    </span>
-                </label>
-                <!--end::Label-->
-            </div>
-            <!--end::Input group-->
-            <!--begin::Input group-->
             <div class="fv-row mb-7">
                 <!--begin::Label-->
                 <label class="fs-6 fw-semibold form-label mt-3">
@@ -77,8 +61,8 @@
                 </label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <input type="text" class="form-control form-control-solid" name="email"
-                    value="{{ isset($user) ? $user->type : '' }}" />
+                <input type="email" class="form-control form-control-solid" name="email"
+                    value="{{ isset($user) ? $user->email : '' }}" />
                 <!--end::Input-->
             </div>
             <div class="fv-row mb-7">
@@ -95,8 +79,8 @@
                 </label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <input type="text" class="form-control form-control-solid" name="password"
-                    value="{{ isset($user) ? $user->type : '' }}" />
+                <input type="password" class="form-control form-control-solid" name="password"
+                    value="{{ isset($user) ? $user->password : '' }}" />
                 <!--end::Input-->
             </div>
             <!--end::Input group-->

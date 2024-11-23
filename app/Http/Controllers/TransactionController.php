@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
+use App\Models\Category;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -11,7 +14,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        $this->setTitle('Transactions');
+        $transaction = Transaction::all();
+        return view('admin.Transaction.index',compact('transaction'));
     }
 
     /**
@@ -19,7 +24,10 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        //
+        $this->setTitle('Transactions');
+        $account = Account::all();
+        $category = Category::all();
+        return view('admin.Transaction.addOrEdit',compact('account','category'));
     }
 
     /**
@@ -27,7 +35,18 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'user_id' => 'nullable',
+            'account_id' => 'nullable',
+            'category_id' => 'nullable',
+            'type_id' => 'nullable',
+            'amount' => 'required',
+            'description' => 'required',
+            'date' => 'required',
+        ]);
+        $validate['user_id'] = 1;
+        Transaction::create($validate);
+        return redirect()->route('transaction.index')->with('success','Successfully create data');
     }
 
     /**

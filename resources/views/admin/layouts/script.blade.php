@@ -10,11 +10,11 @@
 <!--begin::Custom Javascript(used for this page only)-->
 <script src="{{ asset('metronic_html/demo5') }}/assets/js/custom/apps/projects/project/project.js"></script>
 <script src="{{ asset('metronic_html/demo5') }}/assets/plugins/custom/vis-timeline/vis-timeline.bundle.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+{{-- <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script> --}}
 <!--end::Vendors Javascript-->
 <!--begin::Custom Javascript(used for this page only)-->
 <script src="{{ asset('metronic_html/demo5') }}/assets/js/widgets.bundle.js"></script>

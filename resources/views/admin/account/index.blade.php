@@ -135,6 +135,7 @@
             right: 6%;
             top: 12%;
             width: 18%;
+            border-radius: 5px
         }
 
         /* Responsive adjustments */

@@ -34,7 +34,7 @@
             <!--begin::Card toolbar-->
             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                 <!--begin::Add product-->
-                <a href="{{ route('bank.create') }}" class="btn btn-primary">Add {{ $pageTitle }}</a>
+                <a href="{{ route('user.create') }}" class="btn btn-primary">Add {{ $pageTitle }}</a>
                 <!--end::Add product-->
             </div>
             <!--end::Card toolbar-->
@@ -48,13 +48,12 @@
                     <tr class="text-center text-gray-800 fw-bold fs-7 text-uppercase gs-0">
                         <th class="text-center min-w-100px">ID</th>
                         <th class="text-center min-w-100px">Name</th>
-                        <th class="text-center min-w-100px">Email</th>
-                        <th class="text-center min-w-100px">Password</th>
+                        <th class="text-center min-w-100px">Email</th>.
                         <th class="text-center min-w-100px">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="fw-semibold text-gray-600">
-                    @foreach ($bank as $data)
+                    @foreach ($user as $data)
 
                     <tr>
                         <td class="text-center pe-0">
@@ -64,10 +63,7 @@
                             <span class="fw-bold">{{ $data->name }}</span>
                         </td>
                         <td class="text-center">
-                            <img src="{{ asset($pathImg.$data->image) }}" height="100px" alt="">
-                        </td>
-                        <td class="text-center">
-                            <span class="fw-bold">{{ $data->type }}</span>
+                            <span class="fw-bold">{{ $data->email }}</span>
                         </td>
                         <td class="text-center">
                             <a href="#" class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"
@@ -78,17 +74,17 @@
                                 data-kt-menu="true">
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
-                                    <a href="{{ route('bank.show', $data->id) }}" class="menu-link px-3">View</a>
+                                    <a href="{{ route('user.show', $data->id) }}" class="menu-link px-3">View</a>
                                 </div>
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
-                                    <a href="{{ route('bank.edit', $data->id) }}" class="menu-link px-3">Edit</a>
+                                    <a href="{{ route('user.edit', $data->id) }}" class="menu-link px-3">Edit</a>
                                 </div>
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
-                                    <a href="{{ route('bank.destroy', $data->id) }}" class="menu-link px-3"
+                                    <a href="{{ route('user.destroy', $data->id) }}" class="menu-link px-3"
                                         data-kt-ecommerce-order-filter="delete_row">Delete</a>
                                 </div>
                                 <!--end::Menu item-->

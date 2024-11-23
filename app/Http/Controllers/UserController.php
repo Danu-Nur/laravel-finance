@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,7 +12,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $this->setTitle('User');
+        $user = User::all();
+        return view('admin.user.index', compact('user'));
     }
 
     /**
@@ -19,7 +22,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $this->setTitle('User');
+        return view('admin.user.addOrEdit');
     }
 
     /**
@@ -27,7 +31,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'nullable',
+            'email' => 'nullable',
+            'password' => 'nullable',
+        ]);
+
+        User::create($validate);
+        return redirect()->route('user.index')->with('success', 'Successfully create data');
     }
 
     /**
@@ -41,24 +52,33 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+        $this->setTitle('User');
+        return view('admin.user.addOrEdit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'nullable',
+            'email' => 'nullable',
+            'password' => 'nullable',
+        ]);
+
+        $user->update($validate);
+        return redirect()->route('user.index')->with('success', 'Successfully update data');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->back()->with('success', 'Successfully delete data');
     }
 }

@@ -1,156 +1,4 @@
 @extends('admin.layouts.index')
-@section('style')
-    <style>
-        .credit-card {
-            width: 100%;
-            /* max-width: 395px; */
-            /* Default width for larger screens */
-            height: auto;
-            aspect-ratio: 1.72;
-            /* Preserves the height ratio based on width */
-            border-radius: 10px;
-            perspective: 1000px;
-        }
-
-        .credit-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            transition: transform 600ms ease;
-            transform-style: preserve-3d;
-            box-shadow: 0 0 25px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .credit-card-front {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            overflow: hidden;
-            backface-visibility: hidden;
-            background: linear-gradient(321.03deg, #01adef 0%, #0860bf 91.45%);
-        }
-
-        .credit-card-bg {
-            position: absolute;
-            top: -5%;
-            right: -30%;
-            width: 100%;
-            height: 120%;
-            background: linear-gradient(321.03deg, #01adef 0%, #0860bf 91.45%);
-            border-top-left-radius: 100%;
-        }
-
-        .credit-card-bg::before {
-            content: "";
-            position: absolute;
-            top: -5%;
-            right: -20%;
-            width: 100%;
-            height: 120%;
-            background: linear-gradient(321.03deg, #01adef 0%, #0860bf 91.45%);
-            border-top-left-radius: 100%;
-        }
-
-        .credit-card-glow {
-            position: absolute;
-            top: -140px;
-            left: -65px;
-            height: 100%;
-            width: 120%;
-            background: rgba(0, 183, 255, 0.4);
-            filter: blur(10px);
-            border-radius: 100%;
-            transform: skew(-15deg, -15deg);
-        }
-
-        .credit-card-contactless {
-            position: absolute;
-            right: 3%;
-            top: 25%;
-            transform: scale(0.5);
-        }
-
-        .credit-card-chip {
-            position: absolute;
-            top: 30%;
-            left: 6%;
-            width: 10%;
-            height: 18%;
-            border-radius: 5px;
-            /* background-color: #000000; */
-        }
-
-        .credit-card-chip img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .credit-card-holder {
-            position: absolute;
-            left: 6%;
-            bottom: 30%;
-            color: white;
-            font-size: 1em;
-            letter-spacing: 0.2em;
-            filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
-        }
-
-        .credit-card-number {
-            position: absolute;
-            left: 6%;
-            bottom: 15%;
-            color: white;
-            font-size: 1em;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-            filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
-        }
-
-        .credit-card-valid {
-            position: absolute;
-            right: 6%;
-            bottom: 30%;
-            color: white;
-            font-size: 0.8em;
-            letter-spacing: 0.2em;
-            filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
-        }
-
-        .credit-card-type {
-            position: absolute;
-            right: 6%;
-            bottom: 15%;
-            color: white;
-            font-size: 0.8em;
-            letter-spacing: 0.2em;
-            filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
-        }
-
-        .logo {
-            position: absolute;
-            right: 6%;
-            top: 12%;
-            width: 18%;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .credit-card {
-                width: 80%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .credit-card {
-                width: 100%;
-            }
-        }
-    </style>
-@endsection
 @section('title')
     <div class="toolbar d-flex flex-stack flex-wrap mb-5 mb-lg-7" id="kt_toolbar">
         <!--begin::Page title-->
@@ -185,7 +33,7 @@
             <!--begin::Card toolbar-->
             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                 <!--begin::Add product-->
-                <a href="{{ route('account.create') }}" class="btn btn-primary">Add {{ $pageTitle }}</a>
+                <a href="{{ route('transaction.create') }}" class="btn btn-primary">Add {{ $pageTitle }}</a>
                 <!--end::Add product-->
             </div>
             <!--end::Card toolbar-->
@@ -198,26 +46,38 @@
                 <thead>
                     <tr class="text-center text-gray-800 fw-bold fs-7 text-uppercase gs-0">
                         <th class="text-center min-w-100px">ID</th>
-                        <th class="text-center min-w-100px">Bank</th>
                         <th class="text-center min-w-100px">Account</th>
-                        <th class="text-center min-w-100px">Status</th>
+                        <th class="text-center min-w-100px">Category</th>
+                        <th class="text-center min-w-100px">Type</th>
+                        <th class="text-center min-w-100px">Amount</th>
+                        <th class="text-center min-w-100px">Description</th>
+                        <th class="text-center min-w-100px">Date</th>
                         <th class="text-center min-w-100px">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="fw-semibold text-gray-600">
-                    @foreach ($account as $data)
+                    @foreach ($transaction as $data)
                         <tr>
                             <td class="text-center pe-0">
                                 <span class="fw-bold">{{ $data->id }}</span>
                             </td>
                             <td class="text-center">
-                                <span class="fw-bold">{{ $data->bank->name }}</span>
+                                <span class="fw-bold">{{ $data->account->account_name }}</span>
                             </td>
                             <td class="text-center">
-                                <span class="fw-bold">{{ $data->account_name }}</span>
+                                <span class="fw-bold">{{ $data->category->name }}</span>
                             </td>
                             <td class="text-center">
-                                <span class="fw-bold">{{ $data->status }}</span>
+                                <span class="fw-bold">{{ $data->type->name }}</span>
+                            </td>
+                            <td class="text-center">
+                                <span class="fw-bold">Rp. {{ number_format($data->amount,0,'.',',') }}</span>
+                            </td>
+                            <td class="text-center">
+                                <span class="fw-bold">{{ $data->description }}</span>
+                            </td>
+                            <td class="text-center">
+                                <span class="fw-bold">{{ $data->date }}</span>
                             </td>
                             <td class="text-center">
                                 <a href="#" class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"
@@ -228,18 +88,18 @@
                                     data-kt-menu="true">
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-3">
-                                        <a href="{{ route('account.show', $data->id) }}" class="menu-link px-3">View</a>
+                                        <a href="{{ route('transaction.show', $data->id) }}" class="menu-link px-3">View</a>
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-3">
-                                        <a href="{{ route('account.edit', $data->id) }}" class="menu-link px-3">Edit</a>
+                                        <a href="{{ route('transaction.edit', $data->id) }}" class="menu-link px-3">Edit</a>
                                     </div>
                                     <!--end::Menu item-->
                                     <div class="menu-item px-3">
                                         <a href="javascript:void(0);" class="menu-link px-3"
                                             data-kt-ecommerce-order-filter="delete_row"
-                                            onclick="event.preventDefault(); deleteAccount('{{ route('account.destroy', $data->id) }}');">
+                                            onclick="event.preventDefault(); deleteAccount('{{ route('transaction.destroy', $data->id) }}');">
                                             Delete
                                         </a>
                                     </div>
@@ -262,47 +122,4 @@
     </div>
     <!--end::Products-->
 
-    <!--begin::Products-->
-    <div class="row g-5 g-xl-5 mb-5 mb-xl-5">
-        <!--begin::Col-->
-        <div class="col-xxl-12">
-            <div class="card-header my-2">
-                <div class="card-title d-flex justify-content-between fs-3">
-                    <span class="text-start">My Accounts</span>
-                </div>
-            </div>
-            <!--begin::Row-->
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-5">
-                @foreach ($account as $data)
-                    <div class="col">
-                        <div class="credit-card">
-                            <div class="credit-card-inner">
-                                <div class="credit-card-front">
-                                    <div class="credit-card-bg"></div>
-                                    <div class="credit-card-glow"></div>
-
-                                    <img width="92" src="{{ asset($pathImg . $data->bank->image) }}" alt=""
-                                        class="logo">
-
-                                    <div class="credit-card-chip">
-                                        <img src="{{ asset('image/icon/chip.png') }}" alt="">
-                                    </div>
-                                    <div class="credit-card-holder">{{ $data->account_name }}</div>
-                                    <div class="credit-card-number">Rp. 1.000.000.000</div>
-                                    <div class="credit-card-valid">
-                                        ({{ $data->bank->name }})
-                                    </div>
-                                    <div class="credit-card-type">
-                                        ({{ $data->bank->type }})
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-            </div>
-            <!--end::Row-->
-        </div>
-    </div>
 @endsection

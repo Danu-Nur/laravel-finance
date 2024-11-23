@@ -106,7 +106,7 @@
             <!--end::Menu item-->
             <!--begin::Menu item-->
             <div class="menu-item">
-                <a href="{{ route('transaction.index') }}" class="menu-link {!! $pageTitle == 'Transaction' ? 'active' : '' !!}">
+                <a href="{{ route('transaction.index') }}" class="menu-link {!! $pageTitle == 'Transactions' ? 'active' : '' !!}">
                     <span class="menu-title">Transaction</span>
                     <div class="symbol symbol-40px ms-5">
                         <span class="symbol-label bg-light-primary">
